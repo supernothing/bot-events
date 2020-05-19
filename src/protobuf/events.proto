@@ -9,28 +9,36 @@ message TelegramContext {
 message TwitterContext {
 }
 
-message HashSearchRequest {
-  string hash = 1;
-  int32 hash_type = 2;
-  oneof context {
-      TelegramContext telegram = 3;
-      TwitterContext twitter = 4;
-  }
+message Context {
+    oneof context {
+      TelegramContext telegram = 1;
+      TwitterContext twitter = 2;
+    }
 }
 
-message URLSearchRequest {
-  string url = 1;
-    oneof context {
-      TelegramContext telegram = 3;
-      TwitterContext twitter = 4;
-  }
+message Hash {
+    string hash = 1;
+    string hash_type = 2;
 }
+
+message SearchRequest {
+  oneof search {
+    string url = 1;
+    Hash hash = 2;
+  }
+  Context context = 3;
+}
+
 
 message ScanRequest {
     string uri = 1;
     string artifact_type = 2;
-      oneof context {
-      TelegramContext telegram = 3;
-      TwitterContext twitter = 4;
-  }
+    Context context = 3;
+}
+
+message Result {
+    string url = 1;
+    float polyscore = 2;
+    bool malicious = 3;
+    Context context = 4;
 }

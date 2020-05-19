@@ -18,7 +18,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=b'\n\x0c\x65vents.proto\"H\n\x0fTelegramContext\x12\x0f\n\x07\x63hat_id\x18\x01 \x01(\r\x12\x12\n\nmessage_id\x18\x02 \x01(\r\x12\x10\n\x08username\x18\x03 \x01(\t\"\x10\n\x0eTwitterContext\"\x89\x01\n\x11HashSearchRequest\x12\x0c\n\x04hash\x18\x01 \x01(\t\x12\x11\n\thash_type\x18\x02 \x01(\x05\x12$\n\x08telegram\x18\x03 \x01(\x0b\x32\x10.TelegramContextH\x00\x12\"\n\x07twitter\x18\x04 \x01(\x0b\x32\x0f.TwitterContextH\x00\x42\t\n\x07\x63ontext\"t\n\x10URLSearchRequest\x12\x0b\n\x03url\x18\x01 \x01(\t\x12$\n\x08telegram\x18\x03 \x01(\x0b\x32\x10.TelegramContextH\x00\x12\"\n\x07twitter\x18\x04 \x01(\x0b\x32\x0f.TwitterContextH\x00\x42\t\n\x07\x63ontext\"\x86\x01\n\x0bScanRequest\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\x15\n\rartifact_type\x18\x02 \x01(\t\x12$\n\x08telegram\x18\x03 \x01(\x0b\x32\x10.TelegramContextH\x00\x12\"\n\x07twitter\x18\x04 \x01(\x0b\x32\x0f.TwitterContextH\x00\x42\t\n\x07\x63ontextb\x06proto3'
+  serialized_pb=b'\n\x0c\x65vents.proto\"H\n\x0fTelegramContext\x12\x0f\n\x07\x63hat_id\x18\x01 \x01(\r\x12\x12\n\nmessage_id\x18\x02 \x01(\r\x12\x10\n\x08username\x18\x03 \x01(\t\"\x10\n\x0eTwitterContext\"^\n\x07\x43ontext\x12$\n\x08telegram\x18\x01 \x01(\x0b\x32\x10.TelegramContextH\x00\x12\"\n\x07twitter\x18\x02 \x01(\x0b\x32\x0f.TwitterContextH\x00\x42\t\n\x07\x63ontext\"\'\n\x04Hash\x12\x0c\n\x04hash\x18\x01 \x01(\t\x12\x11\n\thash_type\x18\x02 \x01(\t\"Z\n\rSearchRequest\x12\r\n\x03url\x18\x01 \x01(\tH\x00\x12\x15\n\x04hash\x18\x02 \x01(\x0b\x32\x05.HashH\x00\x12\x19\n\x07\x63ontext\x18\x03 \x01(\x0b\x32\x08.ContextB\x08\n\x06search\"L\n\x0bScanRequest\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\x15\n\rartifact_type\x18\x02 \x01(\t\x12\x19\n\x07\x63ontext\x18\x03 \x01(\x0b\x32\x08.Context\"1\n\x06Result\x12\x0c\n\x04uuid\x18\x01 \x01(\t\x12\x19\n\x07\x63ontext\x18\x02 \x01(\x0b\x32\x08.Contextb\x06proto3'
 )
 
 
@@ -93,37 +93,23 @@ _TWITTERCONTEXT = _descriptor.Descriptor(
 )
 
 
-_HASHSEARCHREQUEST = _descriptor.Descriptor(
-  name='HashSearchRequest',
-  full_name='HashSearchRequest',
+_CONTEXT = _descriptor.Descriptor(
+  name='Context',
+  full_name='Context',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='hash', full_name='HashSearchRequest.hash', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='hash_type', full_name='HashSearchRequest.hash_type', index=1,
-      number=2, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='telegram', full_name='HashSearchRequest.telegram', index=2,
-      number=3, type=11, cpp_type=10, label=1,
+      name='telegram', full_name='Context.telegram', index=0,
+      number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='twitter', full_name='HashSearchRequest.twitter', index=3,
-      number=4, type=11, cpp_type=10, label=1,
+      name='twitter', full_name='Context.twitter', index=1,
+      number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -140,38 +126,76 @@ _HASHSEARCHREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
     _descriptor.OneofDescriptor(
-      name='context', full_name='HashSearchRequest.context',
+      name='context', full_name='Context.context',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=109,
-  serialized_end=246,
+  serialized_start=108,
+  serialized_end=202,
 )
 
 
-_URLSEARCHREQUEST = _descriptor.Descriptor(
-  name='URLSearchRequest',
-  full_name='URLSearchRequest',
+_HASH = _descriptor.Descriptor(
+  name='Hash',
+  full_name='Hash',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='url', full_name='URLSearchRequest.url', index=0,
+      name='hash', full_name='Hash.hash', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='telegram', full_name='URLSearchRequest.telegram', index=1,
-      number=3, type=11, cpp_type=10, label=1,
+      name='hash_type', full_name='Hash.hash_type', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=204,
+  serialized_end=243,
+)
+
+
+_SEARCHREQUEST = _descriptor.Descriptor(
+  name='SearchRequest',
+  full_name='SearchRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='url', full_name='SearchRequest.url', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='hash', full_name='SearchRequest.hash', index=1,
+      number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='twitter', full_name='URLSearchRequest.twitter', index=2,
-      number=4, type=11, cpp_type=10, label=1,
+      name='context', full_name='SearchRequest.context', index=2,
+      number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -188,11 +212,11 @@ _URLSEARCHREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
     _descriptor.OneofDescriptor(
-      name='context', full_name='URLSearchRequest.context',
+      name='search', full_name='SearchRequest.search',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=248,
-  serialized_end=364,
+  serialized_start=245,
+  serialized_end=335,
 )
 
 
@@ -218,15 +242,8 @@ _SCANREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='telegram', full_name='ScanRequest.telegram', index=2,
+      name='context', full_name='ScanRequest.context', index=2,
       number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='twitter', full_name='ScanRequest.twitter', index=3,
-      number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -242,43 +259,74 @@ _SCANREQUEST = _descriptor.Descriptor(
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
-    _descriptor.OneofDescriptor(
-      name='context', full_name='ScanRequest.context',
-      index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=367,
-  serialized_end=501,
+  serialized_start=337,
+  serialized_end=413,
 )
 
-_HASHSEARCHREQUEST.fields_by_name['telegram'].message_type = _TELEGRAMCONTEXT
-_HASHSEARCHREQUEST.fields_by_name['twitter'].message_type = _TWITTERCONTEXT
-_HASHSEARCHREQUEST.oneofs_by_name['context'].fields.append(
-  _HASHSEARCHREQUEST.fields_by_name['telegram'])
-_HASHSEARCHREQUEST.fields_by_name['telegram'].containing_oneof = _HASHSEARCHREQUEST.oneofs_by_name['context']
-_HASHSEARCHREQUEST.oneofs_by_name['context'].fields.append(
-  _HASHSEARCHREQUEST.fields_by_name['twitter'])
-_HASHSEARCHREQUEST.fields_by_name['twitter'].containing_oneof = _HASHSEARCHREQUEST.oneofs_by_name['context']
-_URLSEARCHREQUEST.fields_by_name['telegram'].message_type = _TELEGRAMCONTEXT
-_URLSEARCHREQUEST.fields_by_name['twitter'].message_type = _TWITTERCONTEXT
-_URLSEARCHREQUEST.oneofs_by_name['context'].fields.append(
-  _URLSEARCHREQUEST.fields_by_name['telegram'])
-_URLSEARCHREQUEST.fields_by_name['telegram'].containing_oneof = _URLSEARCHREQUEST.oneofs_by_name['context']
-_URLSEARCHREQUEST.oneofs_by_name['context'].fields.append(
-  _URLSEARCHREQUEST.fields_by_name['twitter'])
-_URLSEARCHREQUEST.fields_by_name['twitter'].containing_oneof = _URLSEARCHREQUEST.oneofs_by_name['context']
-_SCANREQUEST.fields_by_name['telegram'].message_type = _TELEGRAMCONTEXT
-_SCANREQUEST.fields_by_name['twitter'].message_type = _TWITTERCONTEXT
-_SCANREQUEST.oneofs_by_name['context'].fields.append(
-  _SCANREQUEST.fields_by_name['telegram'])
-_SCANREQUEST.fields_by_name['telegram'].containing_oneof = _SCANREQUEST.oneofs_by_name['context']
-_SCANREQUEST.oneofs_by_name['context'].fields.append(
-  _SCANREQUEST.fields_by_name['twitter'])
-_SCANREQUEST.fields_by_name['twitter'].containing_oneof = _SCANREQUEST.oneofs_by_name['context']
+
+_RESULT = _descriptor.Descriptor(
+  name='Result',
+  full_name='Result',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='uuid', full_name='Result.uuid', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='context', full_name='Result.context', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=415,
+  serialized_end=464,
+)
+
+_CONTEXT.fields_by_name['telegram'].message_type = _TELEGRAMCONTEXT
+_CONTEXT.fields_by_name['twitter'].message_type = _TWITTERCONTEXT
+_CONTEXT.oneofs_by_name['context'].fields.append(
+  _CONTEXT.fields_by_name['telegram'])
+_CONTEXT.fields_by_name['telegram'].containing_oneof = _CONTEXT.oneofs_by_name['context']
+_CONTEXT.oneofs_by_name['context'].fields.append(
+  _CONTEXT.fields_by_name['twitter'])
+_CONTEXT.fields_by_name['twitter'].containing_oneof = _CONTEXT.oneofs_by_name['context']
+_SEARCHREQUEST.fields_by_name['hash'].message_type = _HASH
+_SEARCHREQUEST.fields_by_name['context'].message_type = _CONTEXT
+_SEARCHREQUEST.oneofs_by_name['search'].fields.append(
+  _SEARCHREQUEST.fields_by_name['url'])
+_SEARCHREQUEST.fields_by_name['url'].containing_oneof = _SEARCHREQUEST.oneofs_by_name['search']
+_SEARCHREQUEST.oneofs_by_name['search'].fields.append(
+  _SEARCHREQUEST.fields_by_name['hash'])
+_SEARCHREQUEST.fields_by_name['hash'].containing_oneof = _SEARCHREQUEST.oneofs_by_name['search']
+_SCANREQUEST.fields_by_name['context'].message_type = _CONTEXT
+_RESULT.fields_by_name['context'].message_type = _CONTEXT
 DESCRIPTOR.message_types_by_name['TelegramContext'] = _TELEGRAMCONTEXT
 DESCRIPTOR.message_types_by_name['TwitterContext'] = _TWITTERCONTEXT
-DESCRIPTOR.message_types_by_name['HashSearchRequest'] = _HASHSEARCHREQUEST
-DESCRIPTOR.message_types_by_name['URLSearchRequest'] = _URLSEARCHREQUEST
+DESCRIPTOR.message_types_by_name['Context'] = _CONTEXT
+DESCRIPTOR.message_types_by_name['Hash'] = _HASH
+DESCRIPTOR.message_types_by_name['SearchRequest'] = _SEARCHREQUEST
 DESCRIPTOR.message_types_by_name['ScanRequest'] = _SCANREQUEST
+DESCRIPTOR.message_types_by_name['Result'] = _RESULT
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 TelegramContext = _reflection.GeneratedProtocolMessageType('TelegramContext', (_message.Message,), {
@@ -295,19 +343,26 @@ TwitterContext = _reflection.GeneratedProtocolMessageType('TwitterContext', (_me
   })
 _sym_db.RegisterMessage(TwitterContext)
 
-HashSearchRequest = _reflection.GeneratedProtocolMessageType('HashSearchRequest', (_message.Message,), {
-  'DESCRIPTOR' : _HASHSEARCHREQUEST,
+Context = _reflection.GeneratedProtocolMessageType('Context', (_message.Message,), {
+  'DESCRIPTOR' : _CONTEXT,
   '__module__' : 'events_pb2'
-  # @@protoc_insertion_point(class_scope:HashSearchRequest)
+  # @@protoc_insertion_point(class_scope:Context)
   })
-_sym_db.RegisterMessage(HashSearchRequest)
+_sym_db.RegisterMessage(Context)
 
-URLSearchRequest = _reflection.GeneratedProtocolMessageType('URLSearchRequest', (_message.Message,), {
-  'DESCRIPTOR' : _URLSEARCHREQUEST,
+Hash = _reflection.GeneratedProtocolMessageType('Hash', (_message.Message,), {
+  'DESCRIPTOR' : _HASH,
   '__module__' : 'events_pb2'
-  # @@protoc_insertion_point(class_scope:URLSearchRequest)
+  # @@protoc_insertion_point(class_scope:Hash)
   })
-_sym_db.RegisterMessage(URLSearchRequest)
+_sym_db.RegisterMessage(Hash)
+
+SearchRequest = _reflection.GeneratedProtocolMessageType('SearchRequest', (_message.Message,), {
+  'DESCRIPTOR' : _SEARCHREQUEST,
+  '__module__' : 'events_pb2'
+  # @@protoc_insertion_point(class_scope:SearchRequest)
+  })
+_sym_db.RegisterMessage(SearchRequest)
 
 ScanRequest = _reflection.GeneratedProtocolMessageType('ScanRequest', (_message.Message,), {
   'DESCRIPTOR' : _SCANREQUEST,
@@ -315,6 +370,13 @@ ScanRequest = _reflection.GeneratedProtocolMessageType('ScanRequest', (_message.
   # @@protoc_insertion_point(class_scope:ScanRequest)
   })
 _sym_db.RegisterMessage(ScanRequest)
+
+Result = _reflection.GeneratedProtocolMessageType('Result', (_message.Message,), {
+  'DESCRIPTOR' : _RESULT,
+  '__module__' : 'events_pb2'
+  # @@protoc_insertion_point(class_scope:Result)
+  })
+_sym_db.RegisterMessage(Result)
 
 
 # @@protoc_insertion_point(module_scope)
